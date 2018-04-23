@@ -12,8 +12,9 @@ int steuerMenu()
   {
   int kommando = 1;
 
-  printf("Heute ist der Geburtstag von Hightower");
-  
+  printf("Heute ist der Geburtstag von Hightower :-)");
+      printf("Das ist korrekt!");
+	printf("Andy ist immer fast da :D \n");
   do{
 
 	if (readInteger(&kommando)!=NO_ERROR)
@@ -27,7 +28,7 @@ int steuerMenu()
                          break;
       case  1:   printf("%s","Dies ist der erste Eintrag von BOffermann\n");
                          break;
-      case  2:   printf("%s","2. Kommando\n");
+      case  2:   printf("%s","2. TEST\n");
                          break;
       case  3:   printf("%s","3. Kommando\n");
                          break;
