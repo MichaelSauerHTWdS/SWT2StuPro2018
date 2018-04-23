@@ -28,7 +28,7 @@ int steuerMenu()
                          break;
       case  1:   printf("%s","Dies ist der erste Eintrag von BOffermann\n");
                          break;
-      case  2:   printf("%s","2. Kommando\n");
+      case  2:   printf("%s","2. TEST\n");
                          break;
       case  3:   printf("%s","3. Kommando\n");
                          break;
