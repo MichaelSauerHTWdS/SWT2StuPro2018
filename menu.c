@@ -23,7 +23,7 @@ int steuerMenu()
       {
       case  0:  printf("%s","\nHilfetext ?\n");
                          break;
-      case  1:   printf("%s","1. Kommando\n");
+      case  1:   printf("%s","Dies ist der erste Eintrag von BOffermann\n");
                          break;
       case  2:   printf("%s","2. Kommando\n");
                          break;
