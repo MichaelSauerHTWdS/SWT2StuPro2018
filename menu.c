@@ -13,7 +13,7 @@ int steuerMenu()
   int kommando = 1;
 
   printf("Heute ist der Geburtstag von Hightower :-)");
-  
+      printf("Das ist korrekt, deshlab darf ich matz de kopp rasieren!");
   do{
 
 	if (readInteger(&kommando)!=NO_ERROR)
