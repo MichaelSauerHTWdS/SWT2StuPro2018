@@ -1,3 +1,7 @@
+/*
+ * Author: Benjamin Hesser
+ */
+
 #include <stdio.h>
 #include "scanflib.h"
 
@@ -11,6 +15,8 @@ int main(int argc, char* argv[])
 int steuerMenu()
   {
   int kommando = 1;
+
+  printf("Schwere Sache!\n");
 
   do{
 
