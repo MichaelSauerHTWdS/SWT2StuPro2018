@@ -17,6 +17,7 @@ int steuerMenu()
 	printf("Hightower ist immer fast da und liebt das oishii-Essen! :D \n");
 	printf("RÜPDEDÜDÜLÜ!");
 	printf("Kleiner Mann ganz groß");
+	printf ("Nom nom nom\n");
   do{
 
 	if (readInteger(&kommando)!=NO_ERROR)
