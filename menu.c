@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "scanflib.h"
-
+//jpinnecker
 int steuerMenu(void);
 
 int main(int argc, char* argv[])
