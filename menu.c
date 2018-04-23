@@ -12,6 +12,8 @@ int steuerMenu()
   {
   int kommando = 1;
 
+  printf("Heute ist der Geburtstag von Hightower");
+  
   do{
 
 	if (readInteger(&kommando)!=NO_ERROR)
