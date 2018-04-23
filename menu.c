@@ -3,8 +3,12 @@
 
 int steuerMenu(void);
 
+
+
 int main(int argc, char* argv[])
   {
+	printf("Rüpdedüdülü");
+
   return steuerMenu();
   }
 
