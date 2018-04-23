@@ -14,7 +14,7 @@ int steuerMenu()
 
   printf("Heute ist der Geburtstag von Hightower :-)");
       printf("Das ist korrekt!");
-	printf("Hightower ist immer fast da :D \n");
+	printf("Hightower ist immer fast da und liebt das oishii-Essen! :D \n");
 	printf("RÜPDEDÜDÜLÜ!");
   do{
 
