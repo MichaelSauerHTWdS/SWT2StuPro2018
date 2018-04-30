@@ -36,6 +36,4 @@ public class Spiel {
 	public void setGame(int game) {
 		this.game = game;
 	}
-
-	
 }
