@@ -6,6 +6,7 @@ public class Schiff
 	private int ladung;
 	private int typ;
 	private String typname;
+	private int maxlad;
 	
 	public Schiff(String name) 
 	{
@@ -22,22 +23,22 @@ public class Schiff
 		
 		switch (typ) 
 		{
-		case 1: this.typname = "Snigge";
+		case 1: this.typname = "Schnigge";
 				break;
-		case 2:	this.typname = "";
+		case 2:	this.typname = "Kogge";
 				break;
-		case 3:	this.typname = "";
+		case 3:	this.typname = "Holk";
 				break;
-		case 4:	this.typname = "";
+		case 4:	this.typname = "Kraweel";
 				break;
-		case 5:	this.typname = "";
+		case 5:	this.typname = "Karacke";
 				break;
-		case 6:	this.typname = "";
+		case 6:	this.typname = "Linienschiff";
 				break;
 		default:
 				break;
 		}
-		antwort = this.name + " ist jetzt eine ";
+		antwort = this.name + " ist jetzt eine " + this.typname;
 		
 		return antwort;
 	}
