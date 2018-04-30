@@ -2,6 +2,8 @@
 /*
  * test
  */
+
+//hi Benjamin
 public class Spiel {
 	private int game = 0;
 	public Spiel()
