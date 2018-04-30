@@ -49,7 +49,6 @@ public class Schiff
 		return antwort;
 	}
 	
-<<<<<<< Updated upstream
 	public String beladen(int anzahl) 
 	{
 		String antwort;
@@ -66,7 +65,6 @@ public class Schiff
 		
 		return antwort;
 	}
-=======
 	public String ausgabe()
 	{
 		String antwort;
@@ -82,6 +80,5 @@ public class Schiff
     System.out.println (test.ausgabe());
 
     }
->>>>>>> Stashed changes
 
 }
