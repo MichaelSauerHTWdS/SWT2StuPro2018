@@ -1,8 +1,9 @@
 
-
+/*
+ * test
+ */
 public class Spiel {
 	private int game = 0;
-	
 	public Spiel()
 	{
 		setGame(0);
