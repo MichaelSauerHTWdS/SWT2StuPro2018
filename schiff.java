@@ -49,6 +49,7 @@ public class Schiff
 		return antwort;
 	}
 	
+<<<<<<< Updated upstream
 	public String beladen(int anzahl) 
 	{
 		String antwort;
@@ -65,5 +66,22 @@ public class Schiff
 		
 		return antwort;
 	}
+=======
+	public String ausgabe()
+	{
+		String antwort;
+	
+		antwort= "Name des Schiffes: " + this.name + " Typbezeichnung: " + this.typ;
+		return antwort;
+	}
+	
+
+    public static void main (String[] args)
+    {
+    Schiff test = new Schiff("Black Pearl");
+    System.out.println (test.ausgabe());
+
+    }
+>>>>>>> Stashed changes
 
 }
