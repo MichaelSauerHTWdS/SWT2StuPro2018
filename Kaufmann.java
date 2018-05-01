@@ -1,10 +1,19 @@
 
+/**
+ * 
+ * @author Benjamin Hesser, Marvin Backes
+ *
+ */
+
 public class Kaufmann 
 {
 	private String name;
 	private String prename;
 	private double vermoegen;
 	
+	/**
+	 * Konstruktor der Kaufmann Klasse.
+	 */
 	public Kaufmann (String name, String prename)
 	{
 		this.name = name;
