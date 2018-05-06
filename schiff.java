@@ -1,4 +1,12 @@
-
+/**
+ * @brief	Schiff.java
+ * @details	java-Klasse zur Erzeugung und Verwaltung von Schiffen
+ *
+ * @file 	Schiff.java
+ * @version 1.0
+ * @date	2018
+ * @author	Matthias Langenfeld, Bjoern Offermann
+ */
 public class Schiff 
 {
 	private String name;
@@ -49,6 +57,10 @@ public class Schiff
 		return antwort;
 	}
 	
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 	public String beladen(int anzahl) 
 	{
 		String antwort;
@@ -65,6 +77,10 @@ public class Schiff
 		
 		return antwort;
 	}
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 	public String ausgabe()
 	{
 		String antwort;
