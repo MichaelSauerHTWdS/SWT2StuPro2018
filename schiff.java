@@ -7,6 +7,16 @@
  * @date	2018
  * @author	Matthias Langenfeld, Bjoern Offermann
  */
+
+
+//import java.io.*;
+import java.util.*;
+
+/**
+ * @name Name des Schiffes
+ * @zustand Zustand des Schiffes
+ *
+ */
 public class Schiff 
 {
 	private String name;
@@ -20,7 +30,7 @@ public class Schiff
 	{
 		this.zustand = 100;
 		this.ladung = 0;
-		this.typ = 2;
+		this.typ = 0;
 		this.name = name;		
 	}
 	
@@ -57,10 +67,7 @@ public class Schiff
 		return antwort;
 	}
 	
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 	public String beladen(int anzahl) 
 	{
 		String antwort;
@@ -77,24 +84,46 @@ public class Schiff
 		
 		return antwort;
 	}
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 	public String ausgabe()
 	{
 		String antwort;
-	
-		antwort= "Name des Schiffes: " + this.name + " Typbezeichnung: " + this.typ;
+		antwort= "Name des Schiffes: " + this.name + " \nTypbezeichnung: " + this.typ + "\nTypname "+ this.typname + "\nZustand: " +this.zustand;
 		return antwort;
+	}
+	
+	public void reparieren()
+	{
+		this.zustand=100;
+	}
+	
+	public void schiffAufrüsten()
+	{
+		if(this.typ < 6)
+		{
+			this.typ++;
+			this.umbau(this.typ);
+			System.out.println("Das Schiff wurde korrekt aufgerüstet: " + this.typ + " " + this.typname);
+		}
+		else {
+			System.out.println("Das Schiff besitzt bereits die höchste Ausbaustufe ");
+		}
 	}
 	
 
     public static void main (String[] args)
     {
-    Schiff test = new Schiff("Black Pearl");
+        Scanner nameSchiff = new Scanner(System.in);
+        System.out.print("Geben Sie bitte einen Schiffsnamen ein");
+        String eingabe = nameSchiff.next();
+        System.out.println("Du hast " + eingabe + " eingegeben.");
+        nameSchiff.close();
+        
+    Schiff test = new Schiff(eingabe);
+    test.umbau(5);
     System.out.println (test.ausgabe());
-
+    test.schiffAufrüsten();
+    System.out.println (test.ausgabe());
     }
 
 }
