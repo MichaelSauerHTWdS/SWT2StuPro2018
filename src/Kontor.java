@@ -1,8 +1,18 @@
+/**
+ * Java Klasse Kontor
+ *
+ * @version V0.1
+ * @date 07.05.2018
+*/
+
 import java.util.Scanner;
 
 public class Kontor {
     private int capacity;
     //private Warenklasse;
+    /**
+     * Konstruktor
+    */
     public Kontor(int capacity)
     {
         this.capacity = capacity;
@@ -11,7 +21,7 @@ public class Kontor {
     /*
         Importiert Guetern in die Kontor-Klasse, mit entscheidung welcher ware
      */
-    public void importGơods( )
+    public void importGoods( )
     {
         try
         {
