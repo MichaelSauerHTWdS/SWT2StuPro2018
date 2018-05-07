@@ -1,9 +1,10 @@
 
+
+
+
 /*
- * test
+Klasse Spiel
  */
-//test lol
-//hi Benjamin
 public class Spiel {
 	private int game = 0;
 	public Spiel()
