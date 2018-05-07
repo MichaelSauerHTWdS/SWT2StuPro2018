@@ -1,5 +1,5 @@
 /**
- * @brief	Schiff.java
+ * @mainpage Hanse Kontor 
  * @details	java-Klasse zur Erzeugung und Verwaltung von Schiffen
  *
  * @file 	Schiff.java
@@ -14,8 +14,8 @@ import java.util.*;
 
 /**
  * @name Name des Schiffes
- * @zustand Zustand des Schiffes
- *
+ * @class Schiff
+ * @brief Hier werden die wichtigsten Parameter des Schiffes definiert
  */
 public class Schiff 
 {
@@ -25,15 +25,26 @@ public class Schiff
 	private int typ;
 	private String typname;
 	private int maxlad;
+	private int preis;
 	
+/**
+ * @brief Konstruktor 
+ * @param name Schiffsname
+ */
 	public Schiff(String name) 
 	{
 		this.zustand = 100;
 		this.ladung = 0;
 		this.typ = 0;
-		this.name = name;		
+		this.name = name;
+		this.preis=0;	
 	}
 	
+	/**
+	 * 
+	 * @param typ Schiffstyp
+	 * @return	Typname
+	 */
 	public String umbau(int typ) 
 	{
 		String antwort;
@@ -119,9 +130,13 @@ public class Schiff
         System.out.println("Du hast " + eingabe + " eingegeben.");
         nameSchiff.close();
         
+    // Neues Objekt Schiff anlegen
     Schiff test = new Schiff(eingabe);
+    System.out.println (test.ausgabe());
+    
     test.umbau(5);
     System.out.println (test.ausgabe());
+    
     test.schiffAufrüsten();
     System.out.println (test.ausgabe());
     }
