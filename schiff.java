@@ -108,20 +108,6 @@ public class Schiff
 		this.zustand=100;
 	}
 	
-	public void schiffAufrüsten()
-	{
-		if(this.typ < 6)
-		{
-			this.typ++;
-			this.umbau(this.typ);
-			System.out.println("Das Schiff wurde korrekt aufgerüstet: " + this.typ + " " + this.typname);
-		}
-		else {
-			System.out.println("Das Schiff besitzt bereits die höchste Ausbaustufe ");
-		}
-	}
-	
-
     public static void main (String[] args)
     {
         Scanner nameSchiff = new Scanner(System.in);

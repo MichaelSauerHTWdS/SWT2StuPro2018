@@ -29,6 +29,11 @@ public class Spiel {
 		return 0;
 	}
 
+
+
+
+
+
 	public int getGame() {
 		return game;
 	}
