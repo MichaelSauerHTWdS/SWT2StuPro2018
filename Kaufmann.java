@@ -16,9 +16,24 @@ public class Kaufmann
 	 */
 	public Kaufmann (String name, String prename)
 	{
-		this.name = name;
-		this.prename = prename;
-		vermoegen = 0.0;
+		try {
+			if (name == "")
+			{
+				throw new Exception("Der Name darf nicht leer sein!\n");
+			}
+			this.name = name;
+			if (prename == "")
+			{
+				throw new Exception("Der Vorname darf nicht leer sein!\n");
+			}
+			this.prename = prename;
+			vermoegen = 0.0;
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
 	}
 	
 	public void print() 
@@ -29,9 +44,9 @@ public class Kaufmann
 	
 	public static void main( String[] args)
 	{
+		
 		Kaufmann k = new Kaufmann("Mustermann" , "Max");
 		k.print();
 	}
-	
 	
 }
