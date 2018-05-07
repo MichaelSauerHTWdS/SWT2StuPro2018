@@ -6,7 +6,7 @@
 
 package src;
 
-//Oberklasse Ware. Keine Objekte ers
+//Oberklasse Ware. Keine Objekte erstellbar!
 abstract class Ware {
 
     private String name;
@@ -15,11 +15,16 @@ abstract class Ware {
     private boolean isLocalWare;
 
     public double getCurrent_price() {
-        return current_price;
+            return current_price;
     }
 
     public void setCurrent_price(double current_price) {
-        this.current_price = current_price;
+        try {
+            assert current_price >= 0.0 : "Preis kann nicht kleiner 0 sein!";
+            this.current_price = current_price
+        } catch (AssertionError e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public double getMax_price() {
@@ -27,7 +32,12 @@ abstract class Ware {
     }
 
     public void setMax_price(double max_price) {
-        this.max_price = max_price;
+        try {
+            assert max_price >= 0.0 : "Preis kann nicht kleiner 0 sein!";
+            this.max_price = max_price
+        } catch (AssertionError e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public boolean isLocalWare() {
