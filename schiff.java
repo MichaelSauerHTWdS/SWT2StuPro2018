@@ -108,7 +108,7 @@ public class Schiff
 		this.zustand=100;
 	}
 	
-	public void schiffAufrüsten()
+	public void schiffAufruesten()
 	{
 		if(this.typ < 6)
 		{
