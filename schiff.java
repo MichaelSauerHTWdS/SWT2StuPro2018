@@ -25,7 +25,6 @@ public class Schiff
 	private int typ;
 	private String typname;
 	private int maxlad;
-	private int preis;
 	
 /**
  * @brief Konstruktor 
@@ -35,9 +34,9 @@ public class Schiff
 	{
 		this.zustand = 100;
 		this.ladung = 0;
-		this.typ = 0;
-		this.name = name;
-		this.preis=0;	
+		this.typ = 2;
+		this.typname = "Kogge";
+		this.name = name;	
 	}
 	
 	/**
@@ -108,6 +107,8 @@ public class Schiff
 		this.zustand=100;
 	}
 	
+	
+
     public static void main (String[] args)
     {
         Scanner nameSchiff = new Scanner(System.in);
@@ -122,9 +123,7 @@ public class Schiff
     
     test.umbau(5);
     System.out.println (test.ausgabe());
-    
-    test.schiffAufrüsten();
-    System.out.println (test.ausgabe());
+
     }
 
 }
