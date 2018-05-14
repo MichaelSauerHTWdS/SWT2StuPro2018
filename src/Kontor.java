@@ -25,6 +25,7 @@ public class Kontor {
 
     /*
         Importiert Guetern in die Kontor-Klasse, mit entscheidung welcher ware
+        test
      */
     public void importGơods( )
     {
