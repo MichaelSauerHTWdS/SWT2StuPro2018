@@ -8,7 +8,6 @@
  * @author	Matthias Langenfeld, Bjoern Offermann
  */
 
-
 //import java.io.*;
 import java.util.*;
 
@@ -25,28 +24,36 @@ public class Schiff
 	private int typ;
 	private String typname;
 	private int maxlad;
-	
+
 /**
  * @brief Konstruktor 
  * @param name Schiffsname
  */
+
 	public Schiff(String name) 
 	{
 		this.zustand = 100;
 		this.ladung = 0;
-		this.typ = 2;
-		this.typname = "Kogge";
+		this.typ = 0;
+		if(name == null || name.isEmpty())
+		{
+			throw new IllegalArgumentException( "Es wurde kein gueltiger Schiffname uebergeben!");
+		}
 		this.name = name;	
 	}
 	
 	/**
-	 * 
 	 * @param typ Schiffstyp
 	 * @return	Typname
 	 */
 	public String umbau(int typ) 
 	{
 		String antwort;
+		if(typ < 1 || typ >6)
+		{
+			throw new IllegalArgumentException( "Kein gueltiger Schiffstyp uebergeben!");
+		}
+		
 		this.typ = typ;
 		
 		switch (typ) 
@@ -77,7 +84,11 @@ public class Schiff
 		return antwort;
 	}
 	
-
+/**
+ * @brief Funktion zum laden von Waren
+ * @param anzahl Anzahl der Ladungsgegenstände
+ * @return	Antwortstring
+ */
 	public String beladen(int anzahl) 
 	{
 		String antwort;
@@ -94,7 +105,10 @@ public class Schiff
 		
 		return antwort;
 	}
-
+/**
+ * @brief Ausgabefunktion
+ * @return Ausgabe
+ */
 	public String ausgabe()
 	{
 		String antwort;
@@ -107,23 +121,45 @@ public class Schiff
 		this.zustand=100;
 	}
 	
+	public void schiffAufrüsten()
+	{
+		if(this.typ < 6)
+		{
+			this.typ++;
+			this.umbau(this.typ);
+			System.out.println("Das Schiff wurde korrekt aufgerüstet: " + this.typ + " " + this.typname);
+		}
+		else {
+			System.out.println("Das Schiff besitzt bereits die höchste Ausbaustufe ");
+		}
+	}
 	
 
     public static void main (String[] args)
     {
-        Scanner nameSchiff = new Scanner(System.in);
-        System.out.print("Geben Sie bitte einen Schiffsnamen ein");
-        String eingabe = nameSchiff.next();
-        System.out.println("Du hast " + eingabe + " eingegeben.");
-        nameSchiff.close();
-        
-    // Neues Objekt Schiff anlegen
-    Schiff test = new Schiff(eingabe);
-    System.out.println (test.ausgabe());
+    	try
+    	{
+    	       Scanner nameSchiff = new Scanner(System.in);
+    	        System.out.print("Geben Sie bitte einen Schiffsnamen ein");
+    	        String eingabe = nameSchiff.next();
+    	        System.out.println("Du hast " + eingabe + " eingegeben.");
+    	        nameSchiff.close();
+    	        
+    	        // Neues Objekt Schiff anlegen
+    	        Schiff test = new Schiff(eingabe);
+    	       // Schiff test2 =new Schiff("");
+    	        System.out.println (test.ausgabe());
+    	        
+    	        test.umbau(5);
+    	        System.out.println (test.ausgabe());
+    	        
+    	        test.schiffAufrüsten();
+    	        System.out.println (test.ausgabe());
+    	}
     
-    test.umbau(5);
-    System.out.println (test.ausgabe());
-
+    	catch (Exception e )
+    	{
+    			e.printStackTrace();
+    	}
     }
-
 }
