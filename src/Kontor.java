@@ -1,18 +1,23 @@
-/**
- * Java Klasse Kontor
- *
- * @version V0.1
- * @date 07.05.2018
-*/
+/*
+Author: Richard Mai
+Kontakt: manhkhang@gmx.de
+ */
+
 
 import java.util.Scanner;
 
 public class Kontor {
+
+
+    /*
+    @param int capacity, Kapazitätsvariable
+     */
+
+
     private int capacity;
-    //private Warenklasse;
-    /**
-     * Konstruktor
-    */
+
+
+
     public Kontor(int capacity)
     {
         this.capacity = capacity;
@@ -20,28 +25,33 @@ public class Kontor {
 
     /*
         Importiert Guetern in die Kontor-Klasse, mit entscheidung welcher ware
+        test
      */
-    public void importGoods( )
+    public void importGơods( )
     {
         try
         {
             Scanner lesen = new Scanner(System.in);
-            string test = lesen.nextLine();
-
+            String test = lesen.nextLine();
+            if(test.equals("b"))
+            {
+                throw new Exception("Hiiiii");
+            }
+            System.out.println(test.toString());
+            System.out.println("Ich bin Hier");
 
         }
         catch (Exception e)
         {
-            system.out.println(e);
+            System.out.println(e);
         }
     }
 
-    public int main ()
+    public static void main (String[] args)
     {
         Kontor kontor = new Kontor(200);
+        kontor.importGơods();
 
-
-        return 0;
     }
 
 }

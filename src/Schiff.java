@@ -3,7 +3,7 @@
  * @details	java-Klasse zur Erzeugung und Verwaltung von Schiffen
  *
  * @file 	Schiff.java
- * @version 1.0
+ * @version 1.1
  * @date	2018
  * @author	Matthias Langenfeld, Bjoern Offermann
  * 		Joshua Pinnecker
@@ -81,7 +81,7 @@ public class Schiff
 				this.maxlad = 1000;
 				break;
 		default:
-				break;
+				throw new IllegalArgumentException( "Kein gueltiger Schiffstyp uebergeben!");
 		}
 		
 		antwort += this.schiffstyp;
@@ -114,7 +114,7 @@ public class Schiff
 	 * @brief Ausgabefunktion
 	 * @return Ausgabe
 	 */
-	public String ausgabe()
+	public String toString()
 	{
 		String antwort;
 		antwort= "Name des Schiffes: " + this.name + " \nTypbezeichnung: " + this.schiffstyp + "\nZustand: " +this.zustand;
@@ -153,16 +153,16 @@ public class Schiff
     	        // Neues Objekt Schiff anlegen
     	        Schiff test = new Schiff(eingabe);
     	       // Schiff test2 =new Schiff("");
-    	        System.out.println (test.ausgabe());
+    	        System.out.println (test.toString());
     	        
     	        System.out.println(test.umbau(Schiffstyp.KARACKE));
-    	        System.out.println (test.ausgabe());
+    	        System.out.println (test.toString());
     	        
     	        test.schiffAufrüsten();
-    	        System.out.println (test.ausgabe());
+    	        System.out.println (test.toString());
 
 		Schiff testAufrüsten = new Schiff("Aurelion Sol", Schiffstyp.LINIENSCHIFF);
-		System.out.println(testAufrüsten.ausgabe());
+		System.out.println(testAufrüsten.toString());
 		testAufrüsten.schiffAufrüsten();
     	}
     
