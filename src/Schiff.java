@@ -12,7 +12,6 @@
 //import java.io.*;
 import java.util.*;
 
-
 /**
  * @name Name des Schiffes
  * @class Schiff
@@ -24,7 +23,6 @@ public class Schiff
 	private String name;
 	private int zustand;
 	private int ladung;
-	private int maxlad;
 
 	/**
 	 * @brief Konstruktor 
@@ -60,30 +58,6 @@ public class Schiff
 		antwort = this.schiffstyp + " wurde zu ";
 		this.schiffstyp = schiffstyp;
 		
-		switch (schiffstyp) 
-		{
-		case SCHNIGGE:
-				this.maxlad = 40;
-				break;
-		case KOGGE:
-				this.maxlad = 100;
-				break;
-		case HOLK:
-				this.maxlad = 150;
-				break;
-		case KRAWEEL:
-				this.maxlad = 400;
-				break;
-		case KARACKE:
-				this.maxlad = 600;
-				break;
-		case LINIENSCHIFF:
-				this.maxlad = 1000;
-				break;
-		default:
-				throw new IllegalArgumentException( "Kein gueltiger Schiffstyp uebergeben!");
-		}
-		
 		antwort += this.schiffstyp;
 		return antwort;
 	}
@@ -97,10 +71,10 @@ public class Schiff
 	{
 		String antwort;
 		
-		if (anzahl + this.ladung <= maxlad) 
+		if (anzahl + this.ladung <= this.schiffstyp.maxlad) 
 		{
 			this.ladung = this.ladung + anzahl;
-			antwort = "Beladung erfolgreich. Es sind noch " + (this.maxlad - this.ladung) + " Einheiten frei.";
+			antwort = "Beladung erfolgreich. Es sind noch " + (this.schiffstyp.maxlad - this.ladung) + " Einheiten frei.";
 		}
 		else
 		{
@@ -117,7 +91,7 @@ public class Schiff
 	public String toString()
 	{
 		String antwort;
-		antwort= "Name des Schiffes: " + this.name + " \nTypbezeichnung: " + this.schiffstyp + "\nZustand: " +this.zustand;
+		antwort= "Name des Schiffes: " + this.name + " \nTypbezeichnung: " + this.schiffstyp + "\nMaximale Ladung: " + this.schiffstyp.maxlad + "\nZustand: " +this.zustand;
 		return antwort;
 	}
 	

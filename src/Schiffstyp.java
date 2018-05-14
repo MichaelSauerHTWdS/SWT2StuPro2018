@@ -6,12 +6,12 @@
  */
 
 public enum Schiffstyp {
-	SCHNIGGE,
-	KOGGE,
-	HOLK,
-	KRAWEEL,
-	KARACKE,
-	LINIENSCHIFF {
+	SCHNIGGE(40),
+	KOGGE(100),
+	HOLK(150),
+	KRAWEEL(400),
+	KARACKE(600),
+	LINIENSCHIFF(1000) {
 		/**
 		 * Override of Schiffstyp.next()
 		 * @return returns null
@@ -21,6 +21,11 @@ public enum Schiffstyp {
 			return null;
 		};
 	};
+
+	public final int maxlad;
+	
+	Schiffstyp(int maxlad){
+		this.maxlad = maxlad;}
 
 	/**
 	 * @return returns next Schiffstyp
