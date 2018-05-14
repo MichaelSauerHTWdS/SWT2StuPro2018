@@ -6,10 +6,12 @@
  * @version 1.0
  * @date	2018
  * @author	Matthias Langenfeld, Bjoern Offermann
+ * 		Joshua Pinnecker
  */
 
 //import java.io.*;
 import java.util.*;
+
 
 /**
  * @name Name des Schiffes
@@ -18,77 +20,79 @@ import java.util.*;
  */
 public class Schiff 
 {
+	private Schiffstyp schiffstyp = Schiffstyp.KOGGE;
 	private String name;
 	private int zustand;
 	private int ladung;
-	private int typ;
-	private String typname;
 	private int maxlad;
 
-/**
- * @brief Konstruktor 
- * @param name Schiffsname
- */
-
+	/**
+	 * @brief Konstruktor 
+	 * @param name Schiffsname
+	 */
 	public Schiff(String name) 
 	{
-		this.zustand = 100;
-		this.ladung = 0;
-		this.typ = 0;
 		if(name == null || name.isEmpty())
 		{
 			throw new IllegalArgumentException( "Es wurde kein gueltiger Schiffname uebergeben!");
 		}
 		this.name = name;	
+		this.zustand = 100;
+		this.ladung = 0;
+	}
+	
+	/**
+	 * Erweiterter Konstruktor um andere Schiffe bauen zu können
+	 */
+	public Schiff(String name, Schiffstyp schiffstyp) {
+		this(name);
+		this.schiffstyp = schiffstyp;
 	}
 	
 	/**
 	 * @param typ Schiffstyp
 	 * @return	Typname
 	 */
-	public String umbau(int typ) 
+	public String umbau(Schiffstyp schiffstyp)
 	{
 		String antwort;
-		if(typ < 1 || typ >6)
-		{
-			throw new IllegalArgumentException( "Kein gueltiger Schiffstyp uebergeben!");
-		}
 		
-		this.typ = typ;
+		antwort = this.schiffstyp + " wurde zu ";
+		this.schiffstyp = schiffstyp;
 		
-		switch (typ) 
+		switch (schiffstyp) 
 		{
-		case 1: this.typname = "Schnigge";
+		case SCHNIGGE:
 				this.maxlad = 40;
 				break;
-		case 2:	this.typname = "Kogge";
+		case KOGGE:
 				this.maxlad = 100;
 				break;
-		case 3:	this.typname = "Holk";
+		case HOLK:
 				this.maxlad = 150;
 				break;
-		case 4:	this.typname = "Kraweel";
+		case KRAWEEL:
 				this.maxlad = 400;
 				break;
-		case 5:	this.typname = "Karacke";
+		case KARACKE:
 				this.maxlad = 600;
 				break;
-		case 6:	this.typname = "Linienschiff";
+		case LINIENSCHIFF:
 				this.maxlad = 1000;
 				break;
 		default:
 				break;
 		}
-		antwort = this.name + " ist jetzt eine " + this.typname;
 		
+		antwort += this.schiffstyp;
 		return antwort;
 	}
 	
-/**
- * @brief Funktion zum laden von Waren
- * @param anzahl Anzahl der Ladungsgegenstände
- * @return	Antwortstring
- */
+	/**
+	 * @brief Funktion zum laden von Waren
+	 * @param anzahl Anzahl der Ladungsgegenstände
+	 * @return	Antwortstring
+	 */
 	public String beladen(int anzahl) 
 	{
 		String antwort;
@@ -105,33 +109,34 @@ public class Schiff
 		
 		return antwort;
 	}
-/**
- * @brief Ausgabefunktion
- * @return Ausgabe
- */
+
+	/**
+	 * @brief Ausgabefunktion
+	 * @return Ausgabe
+	 */
 	public String ausgabe()
 	{
 		String antwort;
-		antwort= "Name des Schiffes: " + this.name + " \nTypbezeichnung: " + this.typ + "\nTypname "+ this.typname + "\nZustand: " +this.zustand;
+		antwort= "Name des Schiffes: " + this.name + " \nTypbezeichnung: " + this.schiffstyp + "\nZustand: " +this.zustand;
 		return antwort;
 	}
 	
+	/**
+	 * Vielleicht mit Parameter um teilweises reparieren zu ermoeglichen.
+	 */
 	public void reparieren()
 	{
 		this.zustand=100;
 	}
 	
-	public void schiffAufrüsten()
+	public void schiffAufrüsten() throws Exception
 	{
-		if(this.typ < 6)
-		{
-			this.typ++;
-			this.umbau(this.typ);
-			System.out.println("Das Schiff wurde korrekt aufgerüstet: " + this.typ + " " + this.typname);
-		}
+		if (this.schiffstyp.next() == null){
+			throw new Exception("Das Schiff besitzt bereits die höchste Ausbaustufe ");}
 		else {
-			System.out.println("Das Schiff besitzt bereits die höchste Ausbaustufe ");
-		}
+			this.schiffstyp = this.schiffstyp.next();
+			this.umbau(this.schiffstyp);
+			System.out.println("Das Schiff wurde korrekt aufgerüstet: " + this.schiffstyp);}
 	}
 	
 
@@ -139,9 +144,9 @@ public class Schiff
     {
     	try
     	{
-    	       Scanner nameSchiff = new Scanner(System.in);
-    	        System.out.print("Geben Sie bitte einen Schiffsnamen ein");
-    	        String eingabe = nameSchiff.next();
+		Scanner nameSchiff = new Scanner(System.in);
+    	        System.out.print("Geben Sie bitte einen Schiffsnamen ein: ");
+    	        String eingabe = nameSchiff.nextLine();
     	        System.out.println("Du hast " + eingabe + " eingegeben.");
     	        nameSchiff.close();
     	        
@@ -150,11 +155,15 @@ public class Schiff
     	       // Schiff test2 =new Schiff("");
     	        System.out.println (test.ausgabe());
     	        
-    	        test.umbau(5);
+    	        System.out.println(test.umbau(Schiffstyp.KARACKE));
     	        System.out.println (test.ausgabe());
     	        
     	        test.schiffAufrüsten();
     	        System.out.println (test.ausgabe());
+
+		Schiff testAufrüsten = new Schiff("Aurelion Sol", Schiffstyp.LINIENSCHIFF);
+		System.out.println(testAufrüsten.ausgabe());
+		testAufrüsten.schiffAufrüsten();
     	}
     
     	catch (Exception e )
