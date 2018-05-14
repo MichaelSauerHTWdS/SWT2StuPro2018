@@ -49,10 +49,6 @@ public class Schiff
 	public String umbau(int typ) 
 	{
 		String antwort;
-		if(typ < 1 || typ >6)
-		{
-			throw new IllegalArgumentException( "Kein gueltiger Schiffstyp uebergeben!");
-		}
 		
 		this.typ = typ;
 		
@@ -77,7 +73,7 @@ public class Schiff
 				this.maxlad = 1000;
 				break;
 		default:
-				break;
+				throw new IllegalArgumentException( "Kein gueltiger Schiffstyp uebergeben!");
 		}
 		antwort = this.name + " ist jetzt eine " + this.typname;
 		
@@ -108,30 +104,18 @@ public class Schiff
 /**
  * @brief Ausgabefunktion
  * @return Ausgabe
- */
-	public String ausgabe()
+*/
+	public String toString()
 	{
 		String antwort;
 		antwort= "Name des Schiffes: " + this.name + " \nTypbezeichnung: " + this.typ + "\nTypname "+ this.typname + "\nZustand: " +this.zustand;
 		return antwort;
 	}
 	
+	
 	public void reparieren()
 	{
 		this.zustand=100;
-	}
-	
-	public void schiffAufrüsten()
-	{
-		if(this.typ < 6)
-		{
-			this.typ++;
-			this.umbau(this.typ);
-			System.out.println("Das Schiff wurde korrekt aufgerüstet: " + this.typ + " " + this.typname);
-		}
-		else {
-			System.out.println("Das Schiff besitzt bereits die höchste Ausbaustufe ");
-		}
 	}
 	
 
@@ -147,14 +131,12 @@ public class Schiff
     	        
     	        // Neues Objekt Schiff anlegen
     	        Schiff test = new Schiff(eingabe);
-    	       // Schiff test2 =new Schiff("");
-    	        System.out.println (test.ausgabe());
+    	        // Schiff test2 =new Schiff("");
+    	       // System.out.println (test.ausgabe());
     	        
-    	        test.umbau(5);
-    	        System.out.println (test.ausgabe());
-    	        
-    	        test.schiffAufrüsten();
-    	        System.out.println (test.ausgabe());
+    	        test.umbau(6);
+    	        System.out.println (test);
+    	   
     	}
     
     	catch (Exception e )
