@@ -12,6 +12,7 @@ public class Kaufmann
 {
 	private String name;
 	private String prename;
+	Konto konto1 = null;
 	
 
 	
@@ -40,22 +41,13 @@ public class Kaufmann
 				throw new Exception("Der Vorname darf nicht leer sein!\n");
 			}
 			
-			Konto konto1 = new Konto();
-			
-		/*	System.out.println("Bitte geben Sie das Vermoegen des Kaufmanns ein: \n");
-			vermoegen = scan.nextDouble();
-			if (vermoegen <= 0.0)
-			{
-				throw new Exception("Das Vermoegen darf nicht negativ oder 0 sein\n");
-			}
-			*/
-			
-			
+			konto1 = new Konto();
+	
 			
 	}
 	public void print() 
 	{
-		System.out.println("Name: " + prename + " "+  name + "\n Vermoegen: " + );
+		System.out.println("Name: " + prename + " "+  name + "\n Vermoegen: " + konto1 );
 		
 	}
 	

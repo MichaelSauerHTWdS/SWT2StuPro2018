@@ -15,6 +15,11 @@ public class Konto {
 	private void setVermoegen(double vermoegen) {
 		this.vermoegen = vermoegen;
 	}
+	
+	public String toString()
+	{
+		return "Vermoegen: "+ vermoegen;
+	}
 
 	public Konto () throws Exception	
 	{
