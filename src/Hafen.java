@@ -13,14 +13,13 @@ public class Hafen /* extends GeoObjekte */{
 
 	//private Kontor;
 	//private Werft;
-	private name; //Stadtname
+	public final name; //Stadtname
 
 	/**
  	* Konstruktor
+	* @param name Hafenname
  	*/
 	public Hafen(String name){
-		if(!(name instanceof String)) throw Exception e;
-
 		this.name = name;
 	}
 }

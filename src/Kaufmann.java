@@ -1,13 +1,19 @@
 
 /**
- * 
+ * Die Klasse Kaufmann ist der Charakter eines Spielers.
+ * Mit ihr werden alle Assets eines Spielers verwaltet.
+ * So verfuegt der Kaufmann ueber sein Konto und eine Menge von Schiffen.
+ *
  * @author Benjamin Hesser, Marvin Backes
  *
  */
 import java.util.Scanner;
 
 
-
+/**
+ * Klasse Kaufmann, der Charakter eines Spielers
+ * Sollen die Waren, die ein Kaufmann besitzt hier referenziert werden?
+ */
 public class Kaufmann 
 {
 	private String name;
