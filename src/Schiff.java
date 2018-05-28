@@ -19,6 +19,7 @@ import java.util.*;
  */
 public class Schiff 
 {
+
 	private Schiffstyp schiffstyp = Schiffstyp.KOGGE;
 	private String name;
 	private int zustand;
@@ -103,7 +104,7 @@ public class Schiff
 		this.zustand=100;
 	}
 	
-	public void schiffAufrüsten() throws Exception
+	public void schiffAufruesten() throws Exception
 	{
 		if (this.schiffstyp.next() == null){
 			throw new Exception("Das Schiff besitzt bereits die höchste Ausbaustufe ");}
@@ -111,6 +112,10 @@ public class Schiff
 			this.schiffstyp = this.schiffstyp.next();
 			this.umbau(this.schiffstyp);
 			System.out.println("Das Schiff wurde korrekt aufgerüstet: " + this.schiffstyp);}
+	}
+	
+	public String getName() {
+		return name;
 	}
 	
 
@@ -132,12 +137,12 @@ public class Schiff
     	        System.out.println(test.umbau(Schiffstyp.KARACKE));
     	        System.out.println (test.toString());
     	        
-    	        test.schiffAufrüsten();
+    	        test.schiffAufruesten();
     	        System.out.println (test.toString());
 
-		Schiff testAufrüsten = new Schiff("Aurelion Sol", Schiffstyp.LINIENSCHIFF);
-		System.out.println(testAufrüsten.toString());
-		testAufrüsten.schiffAufrüsten();
+		Schiff testAufruesten = new Schiff("Aurelion Sol", Schiffstyp.LINIENSCHIFF);
+		System.out.println(testAufruesten.toString());
+		testAufruesten.schiffAufruesten();
     	}
     
     	catch (Exception e )
