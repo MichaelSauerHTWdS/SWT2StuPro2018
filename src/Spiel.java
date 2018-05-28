@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /**
  * Klasse Spiel.
  * Dies ist die Hauptklasse, die die Methode main ausfuehrt.
@@ -6,11 +7,6 @@
  * @date 28.05.18
  * @author Joshua Pinnecker
  * @version 0.2
- */
-import java.util.Scanner;
-
-/**
- * Klasse Spiel
  */
 public class Spiel {
 	private Kaufmannsliste kaufmannsliste;
@@ -22,12 +18,12 @@ public class Spiel {
 		initialize();
 	}
 	
-	private initialize() {
-		Scanner lesen = new Scanner();
+	private void initialize() {
+		Scanner lesen = new Scanner(System.in);
 		
-		System.out.println("Wieviele Spieler nehmen teil? ");
-		lesen.nextInt()
-
+		System.out.println("Wieviele Spieler nehmen teil?");
+		kaufmannsliste = new Kaufmannsliste(lesen.nextInt());
+		System.out.println("Es nehmen " + kaufmannsliste.getSpielerzahl() + " Spieler teil.");
 	}
 
 	public void hello()
@@ -35,19 +31,15 @@ public class Spiel {
 		System.out.print("Hello World");
 	}
 	
-	public void start()
+	private void start()
 	{
-		Scanner lesen = new Scanner();
-		
-		
-		
+
 	}
 	
-	public int main()
+	public static void main(String args[])
 	{
 		Spiel spiel = new Spiel();
 		spiel.start();
-		return 0;
 	}
 
 
