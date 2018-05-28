@@ -33,7 +33,7 @@ public class Kaufmann
 		Scanner scan = new Scanner(System.in);
 
 		/**
-		 * Es wird geprüft, ob die Eingaben nicht leer sind und dann erst in den Attribute geschrieben.
+		 * Es wird geprueft, ob die Eingaben nicht leer sind und dann erst in den Attribute geschrieben.
 		 */
 	
 			System.out.println("Bitte geben Sie den Vornamen ein: \n");

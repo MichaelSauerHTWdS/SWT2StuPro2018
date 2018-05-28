@@ -1,17 +1,35 @@
+/**
+ * Klasse Spiel.
+ * Dies ist die Hauptklasse, die die Methode main ausfuehrt.
+ * Sie verwaltet den Spielfluss.
+ *
+ * @date 28.05.18
+ * @author Joshua Pinnecker
+ * @version 0.2
+ */
+import java.util.Scanner;
 
-
-
-
-/*
-Klasse Spiel
+/**
+ * Klasse Spiel
  */
 public class Spiel {
+	private Kaufmannsliste kaufmannsliste;
 	private int game = 0;
+
+	
 	public Spiel()
 	{
-		setGame(0);
+		initialize();
 	}
 	
+	private initialize() {
+		Scanner lesen = new Scanner();
+		
+		System.out.println("Wieviele Spieler nehmen teil? ");
+		lesen.nextInt()
+
+	}
+
 	public void hello()
 	{
 		System.out.print("Hello World");
@@ -19,14 +37,16 @@ public class Spiel {
 	
 	public void start()
 	{
-		Spiel spiel = new Spiel();
-		spiel.setGame(1);
-		spiel.hello();
+		Scanner lesen = new Scanner();
+		
+		
+		
 	}
 	
 	public int main()
 	{
-		start();
+		Spiel spiel = new Spiel();
+		spiel.start();
 		return 0;
 	}
 
