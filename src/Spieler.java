@@ -1,8 +1,20 @@
+/**
+ * 
+ * @author Benjamin Hesser, Marvin Backes
+ * 
+ * @version 1.0
+ * 
+ * @date 30.04.18
+ */
 
 import java.util.Scanner;
 
 public class Spieler {
 	
+	/**
+	 * Konstruktor zum Erstellen eines Arrays, welches später mit Spielern gefüllt wird 
+	 * @throws Exception
+	 */
 	public Spieler () throws Exception {
 		
 		int spieler[] = new int[10];
@@ -17,9 +29,12 @@ public class Spieler {
 		
 	}
 	
+	/**
+	 * Anzahl der Spieler einlesen und anschließend erstellen 
+	 */
 	public static void main() {
 		
-		int anzahlSpieler;
+		int anzahlSpieler = 0;
 		
 		try {
 			
@@ -38,6 +53,15 @@ public class Spieler {
 		} catch (Exception e) {
 			
 			System.out.println(e.getMessage());
+			
+		}
+		
+		/**
+		 * Mit Hilfe einer For-Schleife so viele Spieler erstellen, wie es anzahlSpieler gibt
+		 */
+		for (int i=0;i <= anzahlSpieler;i++) {
+			
+			
 			
 		}
 	
