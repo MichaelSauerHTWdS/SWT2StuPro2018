@@ -19,6 +19,7 @@ import java.util.*;
  */
 public class Schiff 
 {
+
 	private Schiffstyp schiffstyp = Schiffstyp.KOGGE;
 	private String name;
 	private int zustand;
@@ -111,6 +112,10 @@ public class Schiff
 			this.schiffstyp = this.schiffstyp.next();
 			this.umbau(this.schiffstyp);
 			System.out.println("Das Schiff wurde korrekt aufgerüstet: " + this.schiffstyp);}
+	}
+	
+	public String getName() {
+		return name;
 	}
 	
 
