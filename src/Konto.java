@@ -2,6 +2,9 @@
  * 
  * @author Benjamin Hesser, Marvin Backes
  *
+ * @version 1.0
+ * 
+ * @date 14.05.18
  */
 import java.util.Scanner;
 

@@ -5,7 +5,10 @@
  * So verfuegt der Kaufmann ueber sein Konto und eine Menge von Schiffen.
  *
  * @author Benjamin Hesser, Marvin Backes
- *
+ * 
+ * @version 1.0
+ * 
+ * @date 30.04.18
  */
 import java.util.Scanner;
 
