@@ -24,6 +24,9 @@ public class Spiel {
 		System.out.println("Wieviele Spieler nehmen teil?");
 		kaufmannsliste = new Kaufmannsliste(lesen.nextInt());
 		System.out.println("Es nehmen " + kaufmannsliste.getSpielerzahl() + " Spieler teil.");
+		for (Kaufmann kaufmann : kaufmannsliste.liste) {
+			kaufmann = new Kaufmann();
+		}
 	}
 
 	public void hello()
