@@ -21,7 +21,7 @@ abstract class Ware {
     public void setCurrent_price(double current_price) {
         try {
             assert current_price >= 0.0 : "Preis kann nicht kleiner 0 sein!";
-            this.current_price = current_price
+            this.current_price = current_price;
         } catch (AssertionError e) {
             System.out.println(e.getMessage());
         }
@@ -34,7 +34,7 @@ abstract class Ware {
     public void setMax_price(double max_price) {
         try {
             assert max_price >= 0.0 : "Preis kann nicht kleiner 0 sein!";
-            this.max_price = max_price
+            this.max_price = max_price;
         } catch (AssertionError e) {
             System.out.println(e.getMessage());
         }

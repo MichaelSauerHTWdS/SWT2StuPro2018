@@ -1,14 +1,18 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
 /**
  * 
- * @author Benjamin Hesser, Marvin Backes
+ * @author Benjamin Hesser, Marvin Backes, Joshua Pinnecker
  *
  * @version 1.0
  * 
  * @date 14.05.18
  */
-import java.util.Scanner;
-
 public class Konto {
+	static private final String ERR_WARUM_NICHT = "Das Vermoegen darf nicht negativ oder 0 sein!";
+	static private final String ERR_NEG_EINZAHLEN = "Der einzuzahlende Betrag darf nicht negativ sein!";
+	static private final String ERR_NEG_ABBUCHEN = "Der abzubuchende Betrag darf nicht negativ sein!";
+
 	private double vermoegen;
 
 	public double getVermoegen() {
@@ -24,19 +28,19 @@ public class Konto {
 		return "Vermoegen: "+ vermoegen;
 	}
 
-	public Konto () throws Exception	
+	public Konto () throws IllegalArgumentException, InputMismatchException
 	{
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Bitte geben Sie das Vermoegen des Kaufmanns ein: \n");
-		vermoegen = scan.nextDouble();
+		System.out.println("Bitte geben Sie das Vermoegen des Kaufmanns ein:");
+		this.vermoegen = scan.nextDouble();
 		if (vermoegen <= 0.0)
 		{
-			throw new Exception("Das Vermoegen darf nicht negativ oder 0 sein\n");
+			throw new IllegalArgumentException(ERR_WARUM_NICHT);
 		}
 	}
 	
-	public void einzahlen()
+	public void einzahlen() throws IllegalArgumentException, InputMismatchException
 	{
 		double eingabe;
 		Scanner scan = new Scanner(System.in);
@@ -46,7 +50,7 @@ public class Konto {
 			eingabe = scan.nextDouble();
 			if (eingabe < 0) 
 			{
-				throw new Exception("Der einzuzahlende Betrag darf nicht negativ sein! \n");
+				throw new IllegalArgumentException(ERR_NEG_EINZAHLEN);
 			} 
 			vermoegen += eingabe;
 		} catch (Exception e) 
@@ -56,7 +60,7 @@ public class Konto {
 		
 	}
 	
-	public void abheben()
+	public void abheben() throws IllegalArgumentException, InputMismatchException
 	{
 		double eingabe;
 		Scanner scan = new Scanner(System.in);
@@ -66,7 +70,7 @@ public class Konto {
 			eingabe = scan.nextDouble();
 			if (eingabe < 0) 
 			{
-				throw new Exception("Der abzubuchende Betrag darf nicht negativ sein! \n");
+				throw new IllegalArgumentException(ERR_NEG_ABBUCHEN);
 			} 
 			vermoegen -= eingabe;
 		} catch (Exception e) 

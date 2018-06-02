@@ -1,34 +1,29 @@
-
+import java.util.Scanner;
 /**
  * Die Klasse Kaufmann ist der Charakter eines Spielers.
  * Mit ihr werden alle Assets eines Spielers verwaltet.
  * So verfuegt der Kaufmann ueber sein Konto und eine Menge von Schiffen.
  *
- * @author Benjamin Hesser, Marvin Backes
+ * @author Benjamin Hesser, Marvin Backes, Joshua Pinnecker
  * 
  * @version 1.0
  * 
  * @date 30.04.18
  */
-import java.util.Scanner;
-
-
-/**
- * Klasse Kaufmann, der Charakter eines Spielers
- * Sollen die Waren, die ein Kaufmann besitzt hier referenziert werden?
- */
-public class Kaufmann 
+public class Kaufmann
 {
+ 	/* Sollen die Waren, die ein Kaufmann besitzt hier referenziert werden? */
+    static private final String LEERER_NAME_ERROR = "Der Name darf nicht leer sein!";
 	private String name;
 	private String prename;
-	Konto konto1 = null;
+	Konto konto1;
 	
 
 	
 	/**
 	 * Konstruktor der Kaufmann Klasse.
 	 */
-	public Kaufmann () throws Exception
+	public Kaufmann () throws IllegalArgumentException
 	{
 		Scanner scan = new Scanner(System.in);
 
@@ -36,28 +31,34 @@ public class Kaufmann
 		 * Es wird geprueft, ob die Eingaben nicht leer sind und dann erst in den Attribute geschrieben.
 		 */
 	
-			System.out.println("Bitte geben Sie den Vornamen ein: \n");
+			System.out.println("Bitte geben Sie den Vornamen ein:");
 			prename = scan.nextLine();
-			if (prename.isEmpty() == true)
+			if (prename.isEmpty())
 			{
-				throw new Exception("Der Vorname darf nicht leer sein!\n");
+				throw new IllegalArgumentException(LEERER_NAME_ERROR);
 			}	
 			
-			System.out.println("Bitte geben Sie den Nachnamen ein: \n");		
-			name =scan.nextLine();				
-			if (name.isEmpty() == true)
+			System.out.println("Bitte geben Sie den Nachnamen ein:");
+			name = scan.nextLine();
+			if (name.isEmpty())
 			{
-				throw new Exception("Der Vorname darf nicht leer sein!\n");
+				throw new IllegalArgumentException(LEERER_NAME_ERROR);
 			}
 			
 			konto1 = new Konto();
 	
 			
 	}
-	public void print() 
+
+	public void print()
 	{
-		System.out.println("Name: " + prename + " "+  name + "\n Vermoegen: " + konto1 );
+		System.out.println("Name: " + prename + " "+  name + "\n Vermoegen: " + konto1);
 		
+	}
+
+	public String toString()
+	{
+		return "Name: " + this.prename + " " + this.name + "\t" + konto1.toString();
 	}
 	
 	public static void main( String[] args)

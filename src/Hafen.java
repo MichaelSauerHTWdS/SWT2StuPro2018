@@ -13,7 +13,7 @@ public class Hafen /* extends GeoObjekte */{
 
 	//private Kontor;
 	//private Werft;
-	public final name; //Stadtname
+	public final String name; //Stadtname
 
 	/**
  	* Konstruktor

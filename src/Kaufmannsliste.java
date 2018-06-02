@@ -7,9 +7,9 @@
  * @version 0.1
  */
 class Kaufmannsliste{
-	static private final String ILLEGAL_SPIELERZAHL = "Die Anzahl teilnehmender Spieler muss 2, 3 oder 4 sein.";
+	static private final String ILLEGAL_SPIELERZAHL = "Die Anzahl teilnehmender Spieler muss 2, 3 oder 4 sein!";
 	static private final int MAX_SPIELERZAHL = 4;
-	public rivate Kaufmann[] liste;
+	private Kaufmann[] liste;
 
 	public Kaufmannsliste(int spielerzahl){
 		if (spielerzahl > MAX_SPIELERZAHL || spielerzahl < 2)
@@ -19,6 +19,21 @@ class Kaufmannsliste{
 
 	public int getSpielerzahl(){
 		return liste.length;
+	}
+
+	public String toString() {
+		String returnString = "";
+		for (Kaufmann kaufmann : liste)
+			returnString += (kaufmann.toString() + "\n");
+		return returnString;
+	}
+
+	/**
+	 * Fuegt einen neuen Kaufmann an der Stelle i ein.
+	 * @param i Index an dem der Kaufmann eingefuegt wird.
+	 */
+	public void add(int i) {
+		liste[i] =  new Kaufmann();
 	}
 }
 	
