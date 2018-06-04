@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Kaufmann
 {
  	/* Sollen die Waren, die ein Kaufmann besitzt hier referenziert werden? */
+	//Nein sie werden im in Kontor oder Schiff referenziert
     static private final String LEERER_NAME_ERROR = "Der Name darf nicht leer sein!";
 	private String name;
 	private String prename;
@@ -24,6 +25,16 @@ public class Kaufmann
 	 * Konstruktor der Kaufmann Klasse.
 	 */
 	public Kaufmann () throws IllegalArgumentException
+	{
+
+		name="Musterman";
+		prename="Max";
+		konto1 = new Konto();
+	
+			
+	}
+	
+	public void eingabe () throws IllegalArgumentException
 	{
 		Scanner scan = new Scanner(System.in);
 
@@ -44,10 +55,6 @@ public class Kaufmann
 			{
 				throw new IllegalArgumentException(LEERER_NAME_ERROR);
 			}
-			
-			konto1 = new Konto();
-	
-			
 	}
 
 	public void print()
@@ -58,7 +65,7 @@ public class Kaufmann
 
 	public String toString()
 	{
-		return "Name: " + this.prename + " " + this.name + "\t" + konto1.toString();
+		return "Name: " + this.prename + " " + this.name + "\t" + konto1;
 	}
 	
 	public static void main( String[] args)
