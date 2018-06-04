@@ -4,7 +4,7 @@
  *
  * @date 28.05.18
  * @author Joshua Pinnecker
- * @version 0.1
+ * @version 1
  */
 class Kaufmannsliste{
 	static private final String ILLEGAL_SPIELERZAHL = "Die Anzahl teilnehmender Spieler muss 2, 3 oder 4 sein!";
@@ -31,6 +31,7 @@ class Kaufmannsliste{
 	/**
 	 * Fuegt einen neuen Kaufmann an der Stelle i ein.
 	 * @param i Index an dem der Kaufmann eingefuegt wird.
+     *          TODO: Ueberpruefung auf korrekten Index
 	 */
 	public void add(int i) {
 		liste[i] =  new Kaufmann();
