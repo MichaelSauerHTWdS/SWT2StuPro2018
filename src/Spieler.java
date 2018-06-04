@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Spieler {
 	
 	/**
-	 * Konstruktor zum Erstellen eines Arrays, welches sp√§ter mit Spielern gef√ºllt wird 
+	 * Konstruktor zum Erstellen eines Arrays, welches sp‰ter mit Spielern gef√ºllt wird 
 	 * @throws Exception
 	 */
 	public Spieler () throws Exception {
@@ -30,7 +30,7 @@ public class Spieler {
 	}
 	
 	/**
-	 * Anzahl der Spieler einlesen und anschlie√üend erstellen 
+	 * Anzahl der Spieler einlesen und anschlieﬂend erstellen 
 	 */
 	public static void main() {
 		
@@ -46,7 +46,7 @@ public class Spieler {
 			
 			if (anzahlSpieler <= 1 || anzahlSpieler > 10) {
 				
-				throw new Exception("Es d√ºrfen minimal 2 und maximal 10 Spieler mitspielen!");
+				throw new Exception("Es d¸rfen minimal 2 und maximal 10 Spieler mitspielen!");
 				
 			}
 			
@@ -64,10 +64,6 @@ public class Spieler {
 			
 			
 		}
-	
-		
-		
-		
 	}
 
 }
