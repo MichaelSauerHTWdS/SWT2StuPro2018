@@ -59,8 +59,13 @@ public class Spieler {
 		/**
 		 * Mit Hilfe einer For-Schleife so viele Spieler erstellen, wie es anzahlSpieler gibt
 		 */
-		for (int i=0;i <= anzahlSpieler;i++) {
-			
+		for (int i=0;i <= anzahlSpieler;i++) 
+		{
+			/*//TODO
+			 * Es muss von hier ein neuer Kaufmann erstellt werden und anschließend die Einlesefunktion beim
+			 * Kaufmann aufgerufen werden, damit der Kaufmann personalisiert werden kann.
+			 * Anschließend muss diese Referenz auf den neuen Kaufmann im Array abgespeichert werden.
+			 */
 			
 			
 		}
