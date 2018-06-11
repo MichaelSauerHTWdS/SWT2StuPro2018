@@ -9,9 +9,10 @@ import java.util.InputMismatchException;
  * @date 14.05.18
  */
 public class Konto {
-	static private final String ERR_WARUM_NICHT = "Das Vermoegen darf nicht negativ oder 0 sein!";
+	static private final String ERR_NEG_MONEY = "Das Vermoegen darf nicht negativ sein!";
 	static private final String ERR_NEG_EINZAHLEN = "Der einzuzahlende Betrag darf nicht negativ sein!";
 	static private final String ERR_NEG_ABBUCHEN = "Der abzubuchende Betrag darf nicht negativ sein!";
+	static private final double INIT_MONEY = 1000.0;
 
 	private double vermoegen;
 
@@ -22,13 +23,8 @@ public class Konto {
 	private void setVermoegen(double vermoegen) {
 		this.vermoegen = vermoegen;
 	}
-	
-	public String toString()
-	{
-		return "Vermoegen: "+ vermoegen;
-	}
 
-	public Konto () throws IllegalArgumentException, InputMismatchException
+	private void leseVermoegen() throws IllegalArgumentException, InputMismatchException
 	{
 		Scanner scan = new Scanner(System.in);
 		
@@ -36,8 +32,18 @@ public class Konto {
 		this.vermoegen = scan.nextDouble();
 		if (vermoegen <= 0.0)
 		{
-			throw new IllegalArgumentException(ERR_WARUM_NICHT);
+			throw new IllegalArgumentException(ERR_NEG_MONEY);
 		}
+	}
+	
+	public String toString()
+	{
+		return "Vermoegen: "+ vermoegen;
+	}
+
+	public Konto ()
+	{
+		this.vermoegen = INIT_MONEY;
 	}
 	
 	public void einzahlen() throws IllegalArgumentException, InputMismatchException

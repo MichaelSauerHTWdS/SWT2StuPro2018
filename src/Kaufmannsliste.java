@@ -35,6 +35,7 @@ class Kaufmannsliste{
 	 */
 	public void add(int i) {
 		liste[i] =  new Kaufmann();
+		liste[i].eingabe();
 	}
 }
 	

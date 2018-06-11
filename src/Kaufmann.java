@@ -12,9 +12,7 @@ import java.util.Scanner;
  */
 public class Kaufmann
 {
- 	/* Sollen die Waren, die ein Kaufmann besitzt hier referenziert werden? */
-	//Nein sie werden im in Kontor oder Schiff referenziert
-    static private final String LEERER_NAME_ERROR = "Der Name darf nicht leer sein!";
+	static private final String LEERER_NAME_ERROR = "Der Name darf nicht leer sein!";
 	private String name;
 	private String prename;
 	Konto konto1;
