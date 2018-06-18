@@ -66,7 +66,7 @@ public class Spieler {
 			 * Kaufmann aufgerufen werden, damit der Kaufmann personalisiert werden kann.
 			 * Anschließend muss diese Referenz auf den neuen Kaufmann im Array abgespeichert werden.
 			 */
-			
+			k[i]= new Kaufmann();
 			
 		}
 	}
